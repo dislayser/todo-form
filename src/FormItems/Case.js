@@ -1,6 +1,5 @@
+import Uniqid from '../Helper/Uniqid.js';
 import { Size } from './../UI/Size.js';
-import { Uniqid } from '../../app/Uniqid.js';
-
 
 export class Case{
     static add(item, size = 12, item_type = null, item_id = null){
