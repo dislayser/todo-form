@@ -1,4 +1,4 @@
-import { Uniqid } from "./../../app/Uniqid.js";
+import Uniqid from "../Helper/Uniqid";
 
 export class EditableItem{
     constructor(item, item_type, item_id = null){

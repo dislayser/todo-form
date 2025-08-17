@@ -1,12 +1,9 @@
 import $ from 'jquery';
-import { Uniqid } from '../app/Uniqid.js';
 import { AppConfig } from './Config/AppConfig.js';
 import { ItemsConfig } from './Config/ItemsConfig.js';
 import { EditableItem } from './FormItems/EditableItem.js';
-
 import { Color } from './UI/Color.js';
-
-import { Modal } from '../elements/Modal.js';
+import { Modal } from './elements/Modal.js';
 
 export default class FormBuilder{
     constructor(placement){

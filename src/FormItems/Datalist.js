@@ -1,4 +1,4 @@
-import { Uniqid } from "../../app/Uniqid.js";
+import Uniqid from "../Helper/Uniqid.js";
 import { Color } from "../UI/Color.js";
 import { Case } from "./Case.js";
 import { Option } from "./Select/Option.js";

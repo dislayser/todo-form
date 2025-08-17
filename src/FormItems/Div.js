@@ -1,4 +1,3 @@
-import { Uniqid } from "../../app/Uniqid.js";
 import { Case } from "./Case.js";
 
 export class Div{

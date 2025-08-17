@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import { Uniqid } from "../app/Uniqid.js";
 import { ItemsConfig } from "./Config/ItemsConfig.js";
+import Uniqid from './Helper/Uniqid.js';
 
 export default class FormRender{
     static default_id_for_builder = "bootstrap-form-builder";
