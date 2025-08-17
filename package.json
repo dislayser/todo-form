@@ -1,0 +1,20 @@
+{
+  "name": "todo-form",
+  "version": "1.2.3",
+  "description": "FormBuilder and FormRender.",
+  "main": "./src/jQuery.formBuilder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "form",
+    "builder",
+    "editor"
+  ],
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.14.1"
+  },
+  "author": "dislayser",
+  "license": "MIT"
+}
