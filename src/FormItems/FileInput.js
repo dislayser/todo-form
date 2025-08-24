@@ -236,7 +236,7 @@ export class FileInput{
         // Возврат формы с инпутами
         return [
             Case.add(required_input),
-            // Case.add(multiple_input),
+            Case.add(multiple_input),
             Case.add(label_input),
             Case.add(name_input),
             Case.add(id_input),
