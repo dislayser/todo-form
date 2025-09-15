@@ -7,8 +7,8 @@ import FormRender from "./FormRender";
         editor.buildEditor();
         return editor;
     }
-    jQuery.fn.formRender = function(data, selector = null) {
-        const render = new FormRender(data, selector = null);
+    jQuery.fn.formRender = function(data) {
+        const render = new FormRender(data, this.first());
         render.render();
     }
 })(window.$ || window.jQuery || window.Zepto);

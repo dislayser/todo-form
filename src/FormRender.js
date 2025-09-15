@@ -4,10 +4,10 @@ import Uniqid from './Helper/Uniqid.js';
 
 export default class FormRender{
     static default_id_for_builder = "bootstrap-form-builder";
-    constructor(data, selector = null){
+    constructor(data, placement){
         this.itemsUniqID = ["datalist", "text", "textarea", "date", "file", "password", "checkbox", "select", "number", "datetime"];
         this.data = data;
-        this.selector = selector;
+        this.placement = placement;
         this.classes = ItemsConfig.getKeys("obj");
     }
 
@@ -32,11 +32,10 @@ export default class FormRender{
             }
         });
 
-        if(this.selector){
-            $(this.selector).append(render);
-        }else{
-            return render;
+        if(this.placement){
+            this.placement.append(render);
         }
+        return render;
     }
 
     // Для исправления рендера

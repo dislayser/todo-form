@@ -1,7 +1,7 @@
 export class AppConfig{
     static config = {
         "name" : "ToDo Form Builder",
-        "version" : "1.2.3",
+        "version" : "1.2.5",
         "viewVersion" : true,
         "id" : {
             header : 'form-header',
