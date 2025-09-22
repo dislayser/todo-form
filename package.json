@@ -1,6 +1,6 @@
 {
   "name": "todo-form",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "FormBuilder and FormRender.",
   "main": "./src/jQuery.formBuilder.js",
   "scripts": {
