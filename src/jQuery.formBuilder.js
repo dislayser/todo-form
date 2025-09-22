@@ -2,11 +2,19 @@ import FormBuilder from "./FormBuilder";
 import FormRender from "./FormRender";
 
 (function(jQuery) {
+    /**
+     * @returns {FormBuilder}
+     */
     jQuery.fn.formBuilder = function(options) {
         const editor = new FormBuilder(this.first());
         editor.buildEditor();
         return editor;
     }
+
+    /**
+     * @param {array} data 
+     * @returns {void}
+     */
     jQuery.fn.formRender = function(data) {
         const render = new FormRender(data, this.first());
         render.render();
