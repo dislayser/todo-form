@@ -1,14 +1,15 @@
 import Uniqid from '../Helper/Uniqid.js';
 import { Size } from './../UI/Size.js';
 
-export class Case{
+export class Case
+{
     static add(item, size = 12, item_type = null, item_id = null){
         if (!item_id) item_id = Uniqid.get("preview-" + item_type + "-");
 
         let sizes = Size.getSizes("");
 
         let block = $("<div>")
-            .addClass([sizes[12]])
+            .addClass([sizes[12]] + ' align-self-end')
             .append(item);
         block = Case.setSize(block, size);
         return block;

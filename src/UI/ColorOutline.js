@@ -18,7 +18,12 @@ export class ColorOutline{
         "outline-dark",
         "outline-light"
     ]
-    static btn(name){
+
+    /**
+     * @param {string} name 
+     * @returns { `btn-${string}` | '' } 
+     */
+    static btn(name) {
         if (name && this.colors.includes(name)){
             return "btn-" + name;
         }

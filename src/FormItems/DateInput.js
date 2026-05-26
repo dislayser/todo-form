@@ -95,7 +95,7 @@ export class DateInput{
                 break;
             case "label_text":
                 value = this.label.text()
-                if (this.get("required")) value = value.slice(0, -1);
+                if (this.get("required")) value = value.replace(/\*$/, '');
                 break;
             case "field_size":
                 const sizes = DateInput.fieldSizes;

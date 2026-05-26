@@ -12,7 +12,10 @@ import FormRender from "./FormRender";
     }
 
     /**
-     * @param {array} data 
+     * @param { {
+     *      [key: string]: null|boolean|string|number
+     *      options?: string[]
+     * }[] } data 
      * @returns {void}
      */
     jQuery.fn.formRender = function(data) {

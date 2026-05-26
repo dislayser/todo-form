@@ -1,6 +1,11 @@
-export class Size{
+export class Size
+{
     static br = ["", "sm", "md", "lg"];
 
+    /**
+     * @param { "" | "sm" | "md" | "lg" } breakble
+     * @returns { string[] }
+     */
     static getSizes(breakble = "md"){
         let sizes = [""];
         if (!this.br.includes(breakble)){

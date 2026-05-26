@@ -6,7 +6,15 @@ import { Color } from './UI/Color.js';
 import { Modal } from './elements/Modal.js';
 import Uniqid from './Helper/Uniqid.js';
 
-export default class FormBuilder{
+export default class FormBuilder
+{
+    /** @type {JQuery<HTMLElement>} */
+    placement;
+
+    /** @type {string} */
+    id;
+
+    /** @param {JQuery<HTMLElement>} placement  */
     constructor(placement){
         // айдишник самого редактора
         // this.id = id;

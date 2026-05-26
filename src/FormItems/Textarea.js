@@ -80,7 +80,7 @@ export class Textarea{
                 break;
             case "label_text":
                 value = this.label.text()
-                if (this.get("required")) value = value.slice(0, -1);
+                if (this.get("required")) value = value.replace(/\*$/, '');
                 break;
             case "placeholder":
                 value = this.input.attr(key);

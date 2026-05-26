@@ -82,7 +82,7 @@ export class FileInput{
                 break;
             case "label_text":
                 value = this.label.text()
-                if (this.get("required")) value = value.slice(0, -1);
+                if (this.get("required")) value = value.replace(/\*$/, '');
                 break;
             case "accept":
                 value = this.input.attr(key);

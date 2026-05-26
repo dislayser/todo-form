@@ -61,7 +61,7 @@ export class Checkbox{
                 break;
             case "label_text":
                 value = this.label.text()
-                if (this.get("required")) value = value.slice(0, -1);
+                if (this.get("required")) value = value.replace(/\*$/, '');
                 break;
             case "required":
                 value = this.input.attr(key) === key;

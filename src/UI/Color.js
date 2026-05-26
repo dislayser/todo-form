@@ -10,6 +10,11 @@ export class Color{
         "dark",
         "light"
     ]
+
+    /**
+     * @param {string} name 
+     * @returns { `btn-${string}` | '' } 
+     */
     static btn(name){
         if (name && this.colors.includes(name)){
             return "btn-" + name;
@@ -17,6 +22,10 @@ export class Color{
         return "";
     }
 
+    /**
+     * @param {string} name 
+     * @returns { `text-${string}` | '' } 
+     */
     static text(name){
         if (name && this.colors.includes(name)){
             return "text-" + name;
@@ -24,6 +33,10 @@ export class Color{
         return "";
     }
 
+    /**
+     * @param {string} name 
+     * @returns { `bg-${string}` | '' } 
+     */
     static bg(name){
         if (name && this.colors.includes(name)){
             return "bg-" + name;
@@ -31,6 +44,10 @@ export class Color{
         return "";
     }
 
+    /**
+     * @param {string} name 
+     * @returns { `border-${string}` | '' } 
+     */
     static border(name){
         if (name && this.colors.includes(name)){
             return "border-" + name;

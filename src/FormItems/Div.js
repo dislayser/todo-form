@@ -1,6 +1,7 @@
 import { Case } from "./Case.js";
 
-export class Div{
+export class Div
+{
     constructor(item = null){
         this.item = item;
         this.div = null;

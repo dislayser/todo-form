@@ -4,6 +4,17 @@ import Uniqid from './Helper/Uniqid.js';
 
 export default class FormRender{
     static default_id_for_builder = "bootstrap-form-builder";
+
+    /** @type {?JQuery<HTMLElement>} */
+    placement;
+
+    /** @type {any[]} */
+    data;
+
+    /**
+     * @param {any[]} data 
+     * @param {?JQuery<HTMLElement>} placement 
+     */
     constructor(data, placement){
         this.itemsUniqID = ["datalist", "text", "textarea", "date", "file", "password", "checkbox", "select", "number", "datetime"];
         this.data = data;
@@ -56,6 +67,7 @@ export default class FormRender{
                     let form = new FormRender(data);
                     item.append(form.render());
                 }else{
+                    // TODO: Костыль
                     if (form_id){
                         const ajax_uri_forms = "/get/forms";
                         $.ajax({

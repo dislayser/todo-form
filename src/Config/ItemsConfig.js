@@ -1,5 +1,5 @@
 import $ from 'jquery';
-// Элементы для обьектов
+
 import { Button } from './../FormItems/Button.js';
 import { Header } from './../FormItems/Header.js';
 import { Paragraph } from '../FormItems/Paragraph.js';
@@ -19,6 +19,14 @@ import { PasswordInput } from '../FormItems/PasswordInput.js';
 import { Part } from '../FormItems/Part.js';
 
 export class ItemsConfig{
+    /**
+     * @type { { [key: string]: {
+     *     icon: JQuery<HTMLElement>,
+     *     obj: class,
+     *     text: string,
+     *     params: { [key: string]: null|boolean|string|number },
+     * } } }
+     */
     static items = {
         "header" : {
             "icon" : $("<i>").addClass("bi-type-h1"),
@@ -252,6 +260,15 @@ export class ItemsConfig{
         }
     }
 
+    /**
+     * @param { strin | string[] } keys 
+     * @returns { null | {
+     *     icon: JQuery<HTMLElement>,
+     *     obj: class,
+     *     text: string,
+     *     params: { [key: string]: null|boolean|string|number },
+     * } }
+     */
     static get(keys){
         keys = keys.split(".");
 
@@ -267,6 +284,7 @@ export class ItemsConfig{
         return value;
     }
 
+    /** @param { 'icon' | 'obj' | 'text' | 'param' } param */
     static getKeys(param){
         let keys = {};
         for (var key in this.items){
