@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /home/dislayser/.npm/_logs/2026-05-12T14_20_31_606Z-debug-0.log | grep -A3 \"network\"| head -20)",
+      "Read(//home/dislayser/.npm/_logs/**)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
