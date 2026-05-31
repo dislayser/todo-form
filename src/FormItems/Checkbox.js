@@ -39,7 +39,14 @@ export class Checkbox{
                 this.input.attr(key, value);
                 break;
             case "value":
-                this.input.attr("checked", value);
+                this.input.val(value);
+                break;
+            case "checked":
+                if (value) {
+                    this.input.attr(key, key);
+                } else {
+                    this.input.removeAttr(key);
+                }
                 break;
         }
     }
@@ -70,6 +77,9 @@ export class Checkbox{
                 value = this.input.attr(key) === key;
                 break;
             case "value":
+                value = this.input.val();
+                break;
+            case "checked":
                 value = this.input.is(":checked");
                 break;
         }
@@ -77,7 +87,7 @@ export class Checkbox{
         return value;
     }
 
-    getAll(inputs = ["name", "id", "required", "value", "size", "label_text", "value", "disabled"]){
+    getAll(inputs = ["name", "id", "required", "value", "size", "label_text", "value", "checked", "disabled"]){
         let data = {};
         data["_type"] = this.item.data("item-type");
         inputs.forEach( input => {
@@ -133,6 +143,13 @@ export class Checkbox{
             value : this.get("id")
         });
 
+        let value_input = $("<input>").addClass(sizes[1]).attr({
+            name : "value",
+            placeholder : "Значение",
+            type : "text",
+            value : this.get("value")
+        });
+
         let size_input = $("<input>").addClass(sizes[1]).attr({
             name : "size",
             placeholder : "Размер",
@@ -153,6 +170,9 @@ export class Checkbox{
         name_input.on("input", () => {
             this.set("name", name_input.val())
         });
+        value_input.on("input", () => {
+            this.set("value", value_input.val())
+        });
         label_input.on("input", () => {
             this.set("label_text", label_input.val())
         })
@@ -169,18 +189,24 @@ export class Checkbox{
             Case.add(label_input),
             Case.add(name_input),
             Case.add(id_input),
+            Case.add(value_input),
             Case.add(size_input),
             Case.add(disabled_input)
         ];
     }
 
-    new ({name = "", id = "", size = 6, required = false, disabled = false, label_text = "Галочка", value = false} = {}){
-        this.input = $("<input>").addClass("form-check-input").attr("type", "checkbox").attr("value", "1");
+    new ({name = "", id = "", size = 6, required = false, disabled = false, label_text = "Галочка", value = '1', checked = false} = {}){
+        this.input = $("<input>").addClass("form-check-input").attr("type", "checkbox");
         this.label = $("<label>").addClass("form-check-label");
 
         let div = $("<div>").addClass("form-check").append([this.input,this.label]);
         this.item = Case.add(div, size);
         this.item.addClass(["d-flex", "align-items-end"]);
+
+        if (typeof value == 'boolean') {
+            checked = value;
+            value = '1';
+        }
 
         this.set("name", name);
         this.set("id", id);
@@ -189,6 +215,7 @@ export class Checkbox{
         this.set("required", required);
         this.set("disabled", disabled);
         this.set("value", value);
+        this.set("checked", checked);
 
         return this.item;
     }
