@@ -17,6 +17,7 @@ import { Datalist } from '../FormItems/Datalist.js';
 import { Select } from '../FormItems/Select.js';
 import { PasswordInput } from '../FormItems/PasswordInput.js';
 import { Part } from '../FormItems/Part.js';
+import { RadioGroup } from '../FormItems/RadioGroup.js';
 
 export class ItemsConfig{
     /**
@@ -256,6 +257,21 @@ export class ItemsConfig{
                 id : "",
                 size : 12,
                 formrender : "",
+            }
+        },
+        "radio" : {
+            "icon" : $("<i>").addClass("bi-ui-radios"),
+            "obj" : RadioGroup,
+            "text" : "Радио группа",
+            "params" : {
+                size : 6,
+                required : false,
+                disabled : false,
+                label_text : "Радио группа",
+                id : "",
+                name : "",
+                inline : false,
+                options : ["Вариант 1", "Вариант 2", "Вариант 3"]
             }
         }
     }

@@ -287,8 +287,8 @@ export class Select{
         this.set("field_size", field_size);
         this.set("required", required);
         this.set("disabled", disabled);
-        this.set("value", value);
         this.set("options", options);
+        this.set("value", value);
 
 
         return this.item;

@@ -16,7 +16,7 @@ export default class FormRender{
      * @param {?JQuery<HTMLElement>} placement 
      */
     constructor(data, placement){
-        this.itemsUniqID = ["datalist", "text", "textarea", "date", "file", "password", "checkbox", "select", "number", "datetime"];
+        this.itemsUniqID = ["datalist", "text", "textarea", "date", "file", "password", "checkbox", "select", "number", "datetime", "radio"];
         this.data = data;
         this.placement = placement;
         this.classes = ItemsConfig.getKeys("obj");
