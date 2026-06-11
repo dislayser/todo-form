@@ -5,6 +5,7 @@ import { EditableItem } from './FormItems/EditableItem.js';
 import { Color } from './UI/Color.js';
 import { Modal } from './elements/Modal.js';
 import Uniqid from './Helper/Uniqid.js';
+import UI from './UI/UI.js';
 
 export default class FormBuilder
 {
